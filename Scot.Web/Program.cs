@@ -1,7 +1,16 @@
+using Scot.Web;
+using Scot.Web.Services.Implementations;
+using Scot.Web.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<IProductService, ProductService>();
+SD.ProductAPIBase = builder.Configuration.GetSection("ServiceUrls").GetSection("ProductAPI").Value;
+
+//Add to DI ProductService
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
