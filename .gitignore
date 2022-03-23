@@ -4,3 +4,5 @@
 
 /Scot.Services.ProductAPI/obj
 /Scot.Web/obj
+/Scot.Services.Identity/bin/Debug/net6.0
+/Scot.Services.Identity/obj
